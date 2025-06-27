@@ -1,0 +1,32 @@
+rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /questions/images/{documentId}/{fileId} {
+    	allow read: if true;
+      allow write: if
+      	request.auth != null &&
+      	(!firestore.exists(/databases/(default)/documents/questions/$(documentId))
+       		||
+      	request.auth.uid
+        	== firestore.get(/databases/(default)/documents/questions/$(documentId)).data.questioner);
+    }
+
+    match /answers/images/{documentId}/{fileId} {
+    	allow read: if true;
+      allow write: if
+      	request.auth != null &&
+      	(!firestore.exists(/databases/(default)/documents/answers/$(documentId))
+        	||
+      	request.auth.uid == 
+        	firestore.get(/databases/(default)/documents/answers/$(documentId)).data.questioner
+          || 
+        request.auth.uid == 
+          firestore.get(/databases/(default)/documents/answers/$(documentId)).data.answerer);
+          
+    }
+  }
+}
