@@ -1,6 +1,7 @@
 # bookclub
 
 ## 概要
+URL: [https://bookclub-e4ca9.firebaseapp.com/](https://bookclub-e4ca9.firebaseapp.com/)
 このアプリは、教科書や参考書を使った学習の効率化と、読者コミュニティによる学びの深化を目的としています。同じ教材を使う仲間と疑問を共有し、解決し合うことで、一人では得られない理解とモチベーションを提供します。
 
 ## 主な機能
