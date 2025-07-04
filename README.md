@@ -18,3 +18,31 @@ URL: [https://bookclub-e4ca9.firebaseapp.com/](https://bookclub-e4ca9.firebaseap
 
 ### リアルタイム通知機能
 投稿した質問への新しい回答や、興味のあるスレッドの更新をリアルタイムで通知します。アプリ起動中はもちろん、閉じた状態でもバックグラウンド通知で情報を見逃しません。
+
+## 仕様技術
+
+### フロントエンド
+- Vue.js 3.2.13
+- Vuetify 3.5.17
+
+### バックエンド/データベース
+- Firebase
+  - Firebase Hosting
+  - Cloud Firestore
+  - Cloud Storage for Firebase
+  - Firebase Authentication
+  - Cloud Functions for Firebase
+  - Firebase Cloud Messaging (FCM)
+ 
+### 書籍検索
+- 楽天Books API (バージョン 2017-04-04)
+
+### テキストエディタ
+- tiptap/vue-3 2.3.2
+
+
+
+
+
+
+
