@@ -2,7 +2,7 @@
 
 ## 概要
 URL: ~~https://bookclub-e4ca9.firebaseapp.com/~~<br>
-(※GCPの不具合によりサイトが停止しています。[ローカル環境で実行](#ローカル環境で実行する))
+(※GCPの不具合によりサイトが停止しています。→[ローカル環境で実行する](#ローカル環境で実行する))
 
 このアプリは、教科書や参考書を使った学習の効率化と、読者コミュニティによる学びの深化を目的としています。同じ教材を使う仲間と疑問を共有し、解決し合うことで、一人では得られない理解とモチベーションを提供します。
 
@@ -60,7 +60,7 @@ URL: ~~https://bookclub-e4ca9.firebaseapp.com/~~<br>
 
 ## ローカル環境で実行する
 ### 1.リポジトリーをクローン
-```git clone https://github.com/your-username/your-repository.git```
+```git clone https://github.com/rikuo11/bookclub.git```
 ### 2.依存関係をインストール
 ```npm install```
 ### 3.開発モードで実行
