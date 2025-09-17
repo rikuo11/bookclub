@@ -8,19 +8,7 @@ const { getMessaging } = require('firebase-admin/messaging');
 
 initializeApp()
 
-// Gemini
-const { GoogleGenAI } = require('@google/genai');
-const ai = new GoogleGenAI({ apiKey: "AIzaSyBgNOPaH7o7ucE3dToukYO0h1aQXkBNrvE" });
 
-// exports.addDocument = onCall(async (request) => {
-//   const text = request.data.text
-//   try {
-//     const res = await getFirestore().collection('test').add({ text: text })
-//     return '書き込みました'
-//   } catch(err) {
-//     return err
-//   }
-// })
 exports.notificationToQuestioner = onCall(async (request) => {
   const registrationTokens = []
 
@@ -91,19 +79,5 @@ exports.deleteToken = onCall(async (request) => {
     const res = await getFirestore().doc(`tokens/${ documentId }`).delete()
   } catch (err) {
     console.log(err.message)
-  }
-})
-
-// gemini
-exports.createText = onCall(async (request) => {
-  const contents = `${request.data.title}の著者${request.data.author}を説明する記事を作成してください。タイトルは${request.data.author}。形式はHTML、bodyタグ内に埋め込むためのコードを書いてください。CSSはインラインスタイル、liタグのlist-style-typeはnone、h1,h2,h3タグには上下に適当なマージンを設定してください。コードのみを出力して、私との対話を含めないでください。`
-  try {
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: contents,
-    });
-    return response.text.replace(/```html\n?|```/g, '').trim();
-  } catch(err) {
-    console.log(err.message);
   }
 })

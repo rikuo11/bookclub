@@ -103,24 +103,23 @@ export default {
       }
     }
 
-    // gemini
-    const createText = httpsCallable(functions, 'createText')
+    // cloud function
+    // const createText = httpsCallable(functions, 'createText')
 
     onMounted(async () => {
       searchByAuthor(props.author);
 
-      // create text by gemini
       try {
         authorDetails.value = ''
         isLoading.value = true;
 
-        const res = await createText({
-          title: route.query.title,
-          author: route.params.author
-        })
+        // const res = await createText({
+        //   title: route.query.title,
+        //   author: route.params.author
+        // })
 
         isLoading.value = false;
-        authorDetails.value = res.data
+        // authorDetails.value = res.data
         detailsRef.value.innerHTML = authorDetails.value
       } catch(err) {
         console.log(err.message)
@@ -131,18 +130,17 @@ export default {
     watch([() => route.params.author, () => route.query.title], async () => {
       searchByAuthor(route.params.author);
 
-      // create text by gemini
       try {
         authorDetails.value = ''
         isLoading.value = true;
 
-        const res = await createText({
-          title: route.query.title,
-          author: route.params.author
-        })
+        // const res = await createText({
+        //   title: route.query.title,
+        //   author: route.params.author
+        // })
 
         isLoading.value = false;
-        authorDetails.value = res.data
+        // authorDetails.value = res.data
         detailsRef.value.innerHTML = authorDetails.value
       } catch(err) {
         console.log(err.message)
