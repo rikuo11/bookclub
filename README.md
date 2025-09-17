@@ -1,8 +1,8 @@
 # Bookclub
 
 ## 概要
-URL: ~~https://bookclub-e4ca9.firebaseapp.com/~~
-GCPの不具合によりサイトが停止しています。ローカル環境で実行する
+URL: ~~https://bookclub-e4ca9.firebaseapp.com/~~<br>
+(※GCPの不具合によりサイトが停止しています。[ローカル環境で実行](#ローカル環境で実行する))
 
 このアプリは、教科書や参考書を使った学習の効率化と、読者コミュニティによる学びの深化を目的としています。同じ教材を使う仲間と疑問を共有し、解決し合うことで、一人では得られない理解とモチベーションを提供します。
 
@@ -58,6 +58,10 @@ GCPの不具合によりサイトが停止しています。ローカル環境�
 ### バックグラウンド通知
 バックグラウンド通知はFirebase Cloud Messaging (FCM)を用いて実装しました。ユーザーが投稿した質問に新しい回答が寄せられた際に、質問者のデバイスにリアルタイムで通知を送信します。通知先の各デバイスの登録トークンをFirebase Authenticationのユーザー情報と紐づけることで、ユーザーがプッシュ通知を許可した複数のデバイスに同時に通知を送信しています。
 
-## ローカル環境で実行
-git clone [https://github.com/your-username/your-repository.git](https://github.com/your-username/your-repository.git)
-
+## ローカル環境で実行する
+### 1.リポジトリーをクローン
+```git clone https://github.com/your-username/your-repository.git```
+### 2.依存関係をインストール
+```npm install```
+### 3.開発モードで実行
+```npm run serve```
